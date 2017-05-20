@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+  <title>AWS Lambda Editor for Node.js</title>
+  <link rel="stylesheet" href="bower_components/Umi/dist/css/bootstrap.min.css" />
+  <style>
+    div#AboutModal div.modal-header {
+      border-bottom: 1px solid #e5e5e5;
+    }
+    div.my-container {
+      margin-left: 49px;
+      margin-right: 49px;
+    }
+    div#DownloadLink {
+      margin-top: 1rem;
+    }
+  </style>
+</head>
+<body>
+  <!-- <modal> -->
+  <div class="modal fade" id="testModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-body">
+          <h3 class="modal-title">Loading</h3>
+          <div class="progress progress-striped active">
+            <div class="progress-bar" style="width: 100%"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" id="AboutModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span class="glyphicon glyphicon-remove-circle"></span>
+          </button>
+          <h3 class="modal-title">About</h3>
+        </div>
+        <div class="modal-body">
+          <div class="progress progress-striped active">
+            <div class="progress-bar" style="width: 100%"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" id="NpmModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span class="glyphicon glyphicon-remove-circle"></span>
+          </button>
+          <h3 class="modal-title">npm module</h3>
+        </div>
+        <div class="modal-body">
+          <div class="form-group">
+            <div class="input-group">
+              <input class="form-control" type="text" data-bind="textInput: input, event: {keypress: Enter}">
+              <span class="input-group-btn">
+                <button class="btn btn-primary" type="button" onclick="Adding()">Add</button>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- </modal> -->
+  <header>
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <span class="navbar-brand">AWS Lambda Editor for Node.js</span>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <div class="my-container">
+    <div class="row">
+      <div class="col-xs-2">
+        <button type="button" class="btn btn-primary btn-block" data-toggle="modal" data-target="#NpmModal">npm module</button>
+        <button type="button" class="btn btn-primary btn-block" data-toggle="modal" data-target="#AboutModal">about</button>
+        <button type="button" class="btn btn-danger btn-block">error detail</button>
+        <button type="button" class="btn btn-primary btn-block">download</button>
+        <!-- ko if: link() !=  "" -->
+        <div id="DownloadLink" class="alert alert-success text-center">
+          <a href="#" class="alert-link">download link</a>
+        </div>
+        <!-- /ko -->
+      </div>
+      <div class="col-xs-10">
+        <div id="editor"></div>
+      </div>
+    </div>
+  </div>
+  <script src="bower_components/knockout/dist/knockout.js"></script>
+  <script src="bower_components/jquery/dist/jquery.min.js"></script>
+  <script src="bower_components/Umi/dist/js/bootstrap.min.js"></script>
+  <script src="node_modules/monaco-editor/min/vs/loader.js"></script>
+  <script src="view-model.js"></script>
+  <script src="monaco-config.js"></script>
+</body>
+</html>

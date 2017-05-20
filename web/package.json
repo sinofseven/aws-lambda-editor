@@ -1,0 +1,12 @@
+{
+  "name": "lambda_editor",
+  "version": "0.1.0",
+  "description": "",
+  "main": "index.js",
+  "author": "",
+  "private": true,
+  "license": "MIT",
+  "dependencies": {
+    "monaco-editor": "^0.8.3"
+  }
+}

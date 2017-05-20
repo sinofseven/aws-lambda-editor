@@ -1,0 +1,28 @@
+{
+  "name": "AWS Lambda Editor",
+  "homepage": "https://github.com/sinofseven/aws-lambda-editor",
+  "authors": [
+    "sinofseven(workspace) <luciferous.development@gmail.com>"
+  ],
+  "description": "make deploy package of Nodejs for AWS Lambda",
+  "main": "editor.html",
+  "keywords": [
+    "aws",
+    "monaco"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "Umi": "v3.3.7-2",
+    "jquery": "2.1.1",
+    "knockout": "^3.4.2"
+  },
+  "devDependencies": {
+  }
+}
